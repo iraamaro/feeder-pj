@@ -34,6 +34,8 @@ def feed(n):
         cheat()
         
 def cheat():
+    clear_screen()
+    print("\t\n90 seconds countdown...\n")
     t = 90
     while t >= 1:
         print(t, '\n')
