@@ -22,23 +22,63 @@ class Catcher():
         for i, row in df.iterrows():
             if row['cnpj'] == 'Erro':
                 print("\nErro na iteração %i\n" % (i+1))
-            else:            
-                call = self.url + str(row['cnpj'])
-                response = requests.get(call)
-                if response.status_code != 200:
-                    print("Status:", response.status_code, "Erro consulta")
-                    n.append(1)
-                    feed(n)
-                elif response.status_code == 200:
-                    dado = response.text
-                    dict = json.loads(dado)
-                    l.append(dict)
-                    n.append(1)
-                    feed(n)
-                elif response.status_code == 429:
-                    n.append(1)
-                    feed(n)
-                    cheat_hard()
+            else:
+                call = str(self.url)
+                data = row['cnpj']
+                data = str(data)
+                if len(data) ==  13:
+                    call = self.url + '0' + data
+                    call = str(call)
+                    response = requests.get(call)
+                    if response.status_code != 200:
+                        print("Status:", response.status_code, "Erro consulta")
+                        n.append(1)
+                        feed(n)
+                    elif response.status_code == 200:
+                        dado = response.text
+                        dict = json.loads(dado)
+                        l.append(dict)
+                        n.append(1)
+                        feed(n)
+                    elif response.status_code == 429:
+                        n.append(1)
+                        feed(n)
+                        cheat_hard()
+                elif len(data) == 12:
+                    call = self.url + '00' + data
+                    call = str(call)
+                    response = requests.get(call)
+                    if response.status_code != 200:
+                        print("Status:", response.status_code, "Erro consulta")
+                        n.append(1)
+                        feed(n)
+                    elif response.status_code == 200:
+                        dado = response.text
+                        dict = json.loads(dado)
+                        l.append(dict)
+                        n.append(1)
+                        feed(n)
+                    elif response.status_code == 429:
+                        n.append(1)
+                        feed(n)
+                        cheat_hard()
+                elif len(data) == 14:
+                    call = call+data                    
+                    response = requests.get(call)
+                    if response.status_code != 200:
+                        print("Status:", response.status_code, "Erro consulta")
+                        n.append(1)
+                        feed(n)
+                    elif response.status_code == 200:
+                        dado = response.text
+                        dict = json.loads(dado)
+                        l.append(dict)
+                        n.append(1)
+                        feed(n)
+                    elif response.status_code == 429:
+                        n.append(1)
+                        feed(n)
+                        cheat_hard()
                     
         df2 = pd.DataFrame(data=l)
         saida = os.getcwd()

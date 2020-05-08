@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # Spreadsheets escape
-# .xls
-# .xlsx
-# .ods
+.xls
+.xlsx
+.ods
