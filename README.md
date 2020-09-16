@@ -4,7 +4,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/iramaro/feeder-pj?logo=forks&style=flat-square)](https://github.com/iramaro/feeder-pj/network)
 [![GitHub stars](https://img.shields.io/github/stars/iramaro/feeder-pj?color=yellow&logo=stars&style=flat-square)](https://github.com/iramaro/feeder-pj/stargazers)
 [![GitHub license](https://img.shields.io/github/license/iramaro/feeder-pj?logo=license&style=flat-square)](https://github.com/iramaro/feeder-pj/blob/master/LICENSE)
-[![Telegram](https://img.shields.io/badge/telegram-%40iramaro-9cf)](https://t.me/iramaro)&nbsp;
+[![Telegram](https://img.shields.io/badge/telegram-%40iraamaro-9cf)](https://t.me/iraamaro)&nbsp;
 
 > A simple query for enterprises names.
 > The query used in [ReceitaWS](https://receitaws.com.br/api)
